@@ -27,25 +27,79 @@
       }
 
       #home {
-        background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
           url("img/bg-img.jpg");
         height: 90vh;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
       }
+
       #shop:hover {
         background-color: white !important;
         color: black !important;
       }
+
       #memember:hover {
         background-color: transparent !important;
         color: white !important;
+      }
+
+      #products .card-img {
+        height: 23rem;
+        overflow: hidden;
+      }
+
+      #products .card-img img {
+        transition: all 0.7s;
+      }
+
+      #products .card-img:hover img {
+        transform: scale(1.2);
+      }
+
+      #products .card-img::before {
+        content: "";
+        border: 5px solid transparent;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        transition: all 0.5s;
+        transform-origin: center;
+      }
+
+      #products .card-img:hover::before {
+        width: 80%;
+        height: 80%;
+        top: 50%;
+        left: 50%;
+        border: 5px solid #ff5e5e;
+        transform: translate(-50%, -50%);
+      }
+
+      input::placeholder {
+        color: #aaa !important;
+      }
+
+      #featured .number {
+        position: absolute;
+        font-size: 7rem;
+        font-weight: bold;
+        top: -2rem;
+        left: 0;
+        color: gray;
+        opacity: 0.2;
+        /* z-index: ; */
       }
     </style>
   </head>
 
   <body>
+    <!-- navbar -->
     <div class="bg-body-tertiary">
       <div class="container d-flex justify-content-between p-3">
         <ul class="nav">
@@ -164,7 +218,7 @@
       </div>
     </section>
 
-    <!-- product -->
+    <!-- products -->
     <section id="products" class="py-5">
       <div class="container text-center">
         <p class="text-secondary fw-bold text-uppercase">popular products</p>
@@ -178,12 +232,11 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 py-5">
           <div class="col p-3">
             <div class="card border-0">
-              <div>
+              <div class="card-img position-relative">
                 <img
                   src="img/product-1.webp"
                   alt=""
-                  class="card-img-top object-fit-cover"
-                  style="height: 23rem"
+                  class="card-img-top h-100 position-absolute top-0 start-0 object-fit-cover"
                 />
               </div>
               <div class="card-body">
@@ -220,12 +273,11 @@
           </div>
           <div class="col p-3">
             <div class="card border-0">
-              <div>
+              <div class="card-img position-relative">
                 <img
                   src="img/product-2.webp"
                   alt=""
-                  class="card-img-top object-fit-cover"
-                  style="height: 23rem"
+                  class="card-img-top h-100 position-absolute top-0 start-0 object-fit-cover"
                 />
               </div>
               <div class="card-body">
@@ -262,12 +314,11 @@
           </div>
           <div class="col p-3">
             <div class="card border-0">
-              <div>
+              <div class="card-img position-relative">
                 <img
                   src="img/product-3.webp"
                   alt=""
-                  class="card-img-top object-fit-cover"
-                  style="height: 23rem"
+                  class="card-img-top h-100 position-absolute top-0 start-0 object-fit-cover"
                 />
               </div>
               <div class="card-body">
@@ -304,12 +355,11 @@
           </div>
           <div class="col p-3">
             <div class="card border-0">
-              <div>
+              <div class="card-img position-relative">
                 <img
                   src="img/product-4.webp"
                   alt=""
-                  class="card-img-top object-fit-cover"
-                  style="height: 23rem"
+                  class="card-img-top h-100 position-absolute top-0 start-0 object-fit-cover"
                 />
               </div>
               <div class="card-body">
@@ -346,12 +396,11 @@
           </div>
           <div class="col p-3">
             <div class="card border-0">
-              <div>
+              <div class="card-img position-relative">
                 <img
                   src="img/product-5.webp"
                   alt=""
-                  class="card-img-top object-fit-cover"
-                  style="height: 23rem"
+                  class="card-img-top h-100 position-absolute top-0 start-0 object-fit-cover"
                 />
               </div>
               <div class="card-body">
@@ -388,12 +437,11 @@
           </div>
           <div class="col p-3">
             <div class="card border-0">
-              <div>
+              <div class="card-img position-relative">
                 <img
                   src="img/product-6.webp"
                   alt=""
-                  class="card-img-top object-fit-cover"
-                  style="height: 23rem"
+                  class="card-img-top h-100 position-absolute top-0 start-0 object-fit-cover"
                 />
               </div>
               <div class="card-body">
@@ -424,6 +472,168 @@
                     style="font-size: 0.9rem"
                     >view</a
                   >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- subscribe -->
+    <section
+      class="py-5 text-white text-center"
+      style="
+        background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+          url('img/bg-img.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+      "
+    >
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-7 col-lg-9">
+            <h1 class="h2 my-3">Get notified on each updates.</h1>
+            <form action="" class="my-3 d-flex">
+              <input
+                type="email"
+                placeholder="Enter Your Email Address"
+                class="form-control bg-transparent rounded-0"
+              />
+              <button
+                type="submit"
+                class="btn border rounded-0 text-white text-uppercase fw-bold"
+              >
+                subscribe
+              </button>
+            </form>
+            <p class="my-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              incidunt doloremque minima ad cumque iste!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- featured -->
+    <section id="featured" class="py-5 bg-body-tertiary">
+      <div class="container">
+        <p class="text-secondary fw-bold text-uppercase text-center">
+          awesome products
+        </p>
+        <h1 class="fw-bolder text-capitalize display-5 text-center">
+          featured products
+        </h1>
+        <p class="w-75 px-lg-5 mx-auto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita,
+          natus culpa quae repellendus dolorem esse perspiciatis a sint animi
+          eius asperiores nihil fugit, labore delectus dolorum reiciendis quia
+          beatae doloremque.
+        </p>
+        <div class="row g-5">
+          <div class="col-12">
+            <div class="card border-0 rounded-0 p-5">
+              <div class="row">
+                <div class="col-12 col-lg-6">
+                  <img
+                    src="img/product-1.webp"
+                    alt=""
+                    class="card-img-top rounded-0"
+                  />
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="card-body position-relative">
+                    <span class="number z-2">01.</span>
+                    <h2 class="card-title position-relative z-3">
+                      About This Product
+                    </h2>
+                    <p class="card-text text-secondary position-relative z-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quae, sequi earum tenetur praesentium rem asperiores animi
+                      adipisci dignissimos nulla dolores, sapiente nisi
+                      molestias officia rerum amet quaerat est quidem aut!
+                    </p>
+                    <p class="card-text text-secondary position-relative z-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ipsa error molestias obcaecati cumque quisquam, ex
+                      voluptatum reprehenderit debitis tempora, fugiat sequi
+                      excepturi provident laboriosam, neque architecto ab quam
+                      eaque inventore?
+                    </p>
+                    <label for="">Price:</label>
+                    <p class="card-text text-secondary">
+                      <del>$269.00</del>
+                      <span>$69.00</span>
+                    </p>
+                    <a
+                      href="#"
+                      class="btn border border-3 border-black rounded-0 text-uppercase fw-bold"
+                      style="font-size: 0.8rem"
+                      id="detail"
+                      >view details</a
+                    >
+                    <a
+                      href="#"
+                      class="btn border border-3 border-black rounded-0 text-uppercase fw-bold bg-black text-white"
+                      style="font-size: 0.8rem"
+                      id="cart"
+                      >add to cart</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="card border-0 rounded-0 p-5">
+              <div class="row flex-row-reverse">
+                <div class="col-12 col-lg-6">
+                  <img
+                    src="img/product-2.webp"
+                    alt=""
+                    class="card-img-top rounded-0"
+                  />
+                </div>
+                <div class="col-12 col-lg-6">
+                  <div class="card-body position-relative">
+                    <span class="number z-2">02.</span>
+                    <h2 class="card-title position-relative z-3">
+                      About This Product
+                    </h2>
+                    <p class="card-text text-secondary position-relative z-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quae, sequi earum tenetur praesentium rem asperiores animi
+                      adipisci dignissimos nulla dolores, sapiente nisi
+                      molestias officia rerum amet quaerat est quidem aut!
+                    </p>
+                    <p class="card-text text-secondary position-relative z-3">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Ipsa error molestias obcaecati cumque quisquam, ex
+                      voluptatum reprehenderit debitis tempora, fugiat sequi
+                      excepturi provident laboriosam, neque architecto ab quam
+                      eaque inventore?
+                    </p>
+                    <label for="">Price:</label>
+                    <p class="card-text text-secondary">
+                      <del>$269.00</del>
+                      <span>$69.00</span>
+                    </p>
+                    <a
+                      href="#"
+                      class="btn border border-3 border-black rounded-0 text-uppercase fw-bold"
+                      style="font-size: 0.8rem"
+                      id="detail"
+                      >view details</a
+                    >
+                    <a
+                      href="#"
+                      class="btn border border-3 border-black rounded-0 text-uppercase fw-bold bg-black text-white"
+                      style="font-size: 0.8rem"
+                      id="cart"
+                      >add to cart</a
+                    >
+                  </div>
                 </div>
               </div>
             </div>
